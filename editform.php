@@ -61,11 +61,11 @@ if (!empty($messages)) {
       Женский</label><br />
       Количество конечностей<br/>
     <label><input type="radio" checked="checked"
-      name="body" value="0" 
+      name="body" value="3" 
       <?php print($errors['body'] ? 'class="error"' : '');?>
-      <?php if ($values['limbs']=='0') print 'checked';?>
+      <?php if ($values['limbs']=='3') print 'checked';?>
       />
-      0</label>
+      3</label>
     <label><input type="radio"
       name="body" value="4" 
       <?php print($errors['body'] ? 'class="error"' : '');?>
