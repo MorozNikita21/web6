@@ -4,6 +4,11 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <title>Task 6</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+	.error {
+    background-color: red;
+}
+</style>
 </head>
 <body>
 <?php
@@ -55,11 +60,11 @@ if (!empty($messages)) {
       Количество конечностей<br/>
     <div class="lim">
     <label><input type="radio" checked="checked"
-      name="body" value="0" 
+      name="body" value="3" 
     <?php print($errors['body'] ? 'class="error"' : '');?>
-      <?php if ($values['body']=='0') print 'checked';?>
+      <?php if ($values['body']=='3') print 'checked';?>
     />
-      0</label>
+      3</label>
     <label><input type="radio"
       name="body" value="4" 
     <?php print($errors['body'] ? 'class="error"' : '');?>
@@ -86,10 +91,9 @@ if (!empty($messages)) {
       <label>
       Биография<br />
         <textarea name="biographiya"
-        <?php print($errors['biographiya'] ? 'class="error"' : '');?>
-        value = "<?php print $values['biographiya'];?>"></textarea>
-        </label><br />    
-      <label><input type="checkbox" checked="checked"
+        <?php print($errors['biographiya'] ? 'class="error"' : '');?>><?php print $values['biographiya'];?></textarea>
+        </label><br />
+      <label><input type="checkbox"
         name="check" />
         Ознакомился с контрактом</label>
       <input type="submit" value="Отправить" />
