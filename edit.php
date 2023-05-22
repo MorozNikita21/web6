@@ -60,6 +60,7 @@ $pass = '3113126';
 $db = new PDO('mysql:host=localhost;dbname=u54409', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
   try{
       $id=$_GET['edit_id'];
+	  var_dump($_GET['edit_id']);
       $get=$db->prepare("select * from forma where id=?");
       $get->execute(array($id));
       $user=$get->fetchALL();
@@ -73,7 +74,7 @@ $db = new PDO('mysql:host=localhost;dbname=u54409', $user, $pass, array(PDO::ATT
       $get2->execute(array($id));
       $pwrs=$get2->fetchALL();
 
-	  $temp=array(0=>empty($pwrs[0]['a_id'])?null:$pwrs[0]['a_id'],1=>empty($pwrs[1]['a_id'])?null:$pwrs[1]['a_id'],2=>empty($pwrs[2]['a_id'])?null:$pwrs[2]['a_id'],3=>empty($pwrs[3]['a_id'])?null:$pwrs[3]['a_id']);
+	  $temp=array(0=>empty($pwrs[0]['ability_id'])?null:$pwrs[0]['ability_id'],1=>empty($pwrs[1]['ability_id'])?null:$pwrs[1]['ability_id'],2=>empty($pwrs[2]['ability_id'])?null:$pwrs[2]['ability_id'],3=>empty($pwrs[3]['ability_id'])?null:$pwrs[3]['ability_id']);
       $values['ability'] = $temp;
   }
   catch(PDOException $e){
